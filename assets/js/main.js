@@ -9,13 +9,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Dropdown toggle on mobile tap
+  // Dropdown toggle on mobile tap + keyboard on desktop
   document.querySelectorAll('.dropdown > a').forEach(function (link) {
     link.addEventListener('click', function (e) {
       if (window.innerWidth <= 820) {
         e.preventDefault();
         this.closest('.dropdown').classList.toggle('open');
       }
+    });
+    link.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.closest('.dropdown').classList.toggle('open');
+      }
+    });
+  });
+
+  // Close dropdown on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+      });
+    }
+  });
+
+  // Mailto form: show fallback notice after submit
+  document.querySelectorAll('form[action^="mailto:"]').forEach(function (form) {
+    form.addEventListener('submit', function () {
+      var notice = form.querySelector('.form-sent');
+      if (notice) setTimeout(function () { notice.style.display = 'block'; }, 800);
     });
   });
 

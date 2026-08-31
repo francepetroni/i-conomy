@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact – I-Conomy</title>
+  <meta name="description" content="Contact I-Conomy Srl — HV module manufacturer in Livorno, Italy. Request a quote or send a message. Phone: +39 393 466 08 60.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html">I&#8209;<span>Conomy</span></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo/logo.png" alt="I-Conomy" class="logo-img"></a>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav>
       <a href="index.html">Home</a>
@@ -52,12 +53,20 @@
       </div>
       <div>
         <p class="section-label">Send a Message</p>
-        <form action="mailto:info@i-conomy.com" method="post" enctype="text/plain">
-          <input type="text"  name="name"    placeholder="Your name"  required>
-          <input type="email" name="email"   placeholder="Your email" required>
-          <input type="text"  name="subject" placeholder="Subject">
-          <textarea           name="message" placeholder="Your message" required></textarea>
+        <form action="mailto:info@i-conomy.com" method="post" enctype="text/plain" style="gap:.85rem;">
+          <label for="c-name" style="font-size:.88rem;font-weight:600;color:var(--navy);">Name <span style="color:#c0392b">*</span></label>
+          <input type="text"  id="c-name"    name="name"    placeholder="Your name"  required>
+          <label for="c-email" style="font-size:.88rem;font-weight:600;color:var(--navy);margin-top:.2rem;">Email <span style="color:#c0392b">*</span></label>
+          <input type="email" id="c-email"   name="email"   placeholder="Your email" required>
+          <label for="c-subject" style="font-size:.88rem;font-weight:600;color:var(--navy);margin-top:.2rem;">Subject</label>
+          <input type="text"  id="c-subject" name="subject" placeholder="Subject">
+          <label for="c-message" style="font-size:.88rem;font-weight:600;color:var(--navy);margin-top:.2rem;">Message <span style="color:#c0392b">*</span></label>
+          <textarea           id="c-message" name="message" placeholder="Your message" required></textarea>
           <button type="submit">Send Message</button>
+          <div class="form-sent" role="alert">
+            Your email client should open now. If nothing happened, write directly to
+            <a href="mailto:info@i-conomy.com">info@i-conomy.com</a>.
+          </div>
         </form>
       </div>
     </div>

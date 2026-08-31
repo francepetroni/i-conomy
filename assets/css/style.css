@@ -222,6 +222,75 @@ form button:hover { background: #1e6bbf; }
 .bg-light { background: var(--light); }
 .bg-white { background: var(--white); }
 
+/* ── LOGO IMAGE ── */
+.logo-img { height: 44px; width: auto; display: block; }
+
+/* ── KEYBOARD FOCUS ── */
+:focus-visible { outline: 2px solid #7eb8f7; outline-offset: 2px; }
+nav a:focus-visible { outline: 2px solid #7eb8f7; outline-offset: -3px; }
+
+/* ── DROPDOWN open on desktop (keyboard) ── */
+.dropdown.open .dropdown-menu { display: block; }
+
+/* ── PRODUCT IMAGES ── */
+.product-img {
+  width: 100%; border-radius: 4px; display: block;
+  object-fit: cover; max-height: 340px; margin-bottom: 1.5rem;
+}
+.product-img-gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .7rem; margin-bottom: 1.5rem;
+}
+.product-img-gallery img {
+  width: 100%; border-radius: 3px; object-fit: cover;
+  aspect-ratio: 4/3; display: block;
+}
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  font-size: .78rem; color: rgba(255,255,255,.52); margin-bottom: .8rem;
+}
+.breadcrumb a { color: rgba(255,255,255,.52); text-decoration: none; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb .sep { margin: 0 .45rem; opacity: .5; }
+
+/* ── COLLABORATION STRIP ── */
+.collab-strip { background: var(--navy); padding: 3rem 2rem; }
+.collab-strip .section-label { color: #7eb8f7; text-align: center; margin-bottom: 1.5rem; }
+.collab-logos {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: center; gap: 1.8rem 3rem;
+  max-width: 900px; margin: 0 auto;
+}
+.collab-logos img {
+  height: 44px; width: auto; max-width: 120px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); opacity: .65;
+  transition: opacity .2s;
+}
+.collab-logos img:hover { opacity: 1; }
+
+/* ── FORM SENT NOTICE ── */
+.form-sent {
+  display: none; margin-top: .8rem; padding: .9rem 1.2rem;
+  background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 3px;
+  color: #2e7d32; font-size: .88rem; line-height: 1.5;
+}
+.form-sent a { color: #1e6a1e; }
+
+/* ── MEDIA MENTION ── */
+.media-mention {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  background: var(--light); border-radius: 4px;
+  padding: 1rem 1.2rem; margin-top: 1.5rem;
+}
+.media-mention img {
+  width: 100px; height: 70px; object-fit: cover;
+  border-radius: 3px; flex-shrink: 0;
+}
+.media-mention-text p { font-size: .85rem; color: var(--gray); margin-bottom: .3rem; }
+.media-mention-text strong { color: var(--navy); font-size: .88rem; }
+
 /* ── FOOTER ── */
 footer {
   background: var(--navy); color: rgba(255,255,255,.5);
