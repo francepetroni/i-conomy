@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Quote – I-Conomy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .quote-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .quote-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .field label {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .field label .req {
+      color: #c0392b;
+      margin-left: .15rem;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      padding: .7rem .9rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: .95rem;
+      color: var(--text);
+      background: var(--light);
+      transition: border-color .2s, background .2s;
+      width: 100%;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--white);
+    }
+    .field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+    .quote-form button[type="submit"] {
+      align-self: flex-start;
+      padding: .75rem 2.4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: .97rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .quote-form button[type="submit"]:hover {
+      background: #1e6bbf;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">I&#8209;<span>Conomy</span></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="modules/index.html">HV Modules</a>
+        <div class="dropdown-menu">
+          <a href="modules/single-channel.html">Single Channel HV Modules</a>
+          <a href="modules/custom-systems.html">Custom HV Systems</a>
+          <a href="modules/piezoelectric.html">HV Modules for Piezoelectric Actuators</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="heritage.html">Heritage</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <p class="section-label">Products</p>
+    <h1><strong>Request</strong> a Quote</h1>
+  </div>
+</div>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="quote-wrap">
+      <form class="quote-form" id="quoteForm" action="mailto:info@i-conomy.com" method="post" enctype="text/plain">
+
+        <div class="field">
+          <label for="name">Name <span class="req">*</span></label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+
+        <div class="field">
+          <label for="org">Organization Name <span class="req">*</span></label>
+          <input type="text" id="org" name="Organization Name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="Email Address" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="Phone Number" placeholder="E.g. +1 3004005000">
+        </div>
+
+        <div class="field">
+          <label for="model">Model's Name</label>
+          <input type="text" id="model" name="Model's Name">
+        </div>
+
+        <div class="field">
+          <label for="application">Application <span class="req">*</span></label>
+          <select id="application" name="Application" required>
+            <option value="">— Select —</option>
+            <option value="Ground">Ground</option>
+            <option value="Space">Space</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="quantity">Quantity <span class="req">*</span></label>
+          <input type="number" id="quantity" name="Quantity" min="1" value="1" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" placeholder="Hi, I would like to get a quote for the following products..."></textarea>
+        </div>
+
+        <button type="submit">Request</button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="cookies.html">Cookies Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+  </div>
+  <p>&copy; 2026 I-Conomy S.r.l. &mdash; Innovation-Economy &mdash; Aerospazio Tecnologie spin-off</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Pre-fill Model's Name from URL parameter: quote.html?model=HVPA+%C2%B1+700+V
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var model = params.get('model');
+    if (model) {
+      document.getElementById('model').value = model;
+    }
+  })();
+</script>
+
+</body>
+</html>

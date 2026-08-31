@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single Channel HV Modules – I-Conomy</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .action-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.2rem; }
+    .btn-outline {
+      display: inline-block; padding: .65rem 1.6rem;
+      border: 1.5px solid var(--accent); color: var(--accent);
+      text-decoration: none; border-radius: 3px; font-size: .88rem;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+  </style>
 </head>
 <body>
 
@@ -43,7 +53,6 @@
     <!-- Low Power -->
     <div class="product-category">
       <h3>Low Power Modules — 150 V to 3500 V</h3>
-      <!-- Product image placeholder -->
       <div style="background:var(--light);border-radius:4px;height:220px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
         <p style="color:var(--gray);font-size:.85rem;">[ Product photo — HV3 Low Power Modules ]</p>
       </div>
@@ -70,12 +79,15 @@
           </tbody>
         </table>
       </div>
+      <div class="action-row">
+        <a class="btn" href="../quote-low-power.html">Request a Quote</a>
+        <a class="btn-outline" href="../technical-manual.html?model=HV3+%2B+150V">Request Technical Manual</a>
+      </div>
     </div>
 
     <!-- High Power -->
     <div class="product-category">
       <h3>High Power Modules — up to 6000 V</h3>
-      <!-- Product image placeholder -->
       <div style="background:var(--light);border-radius:4px;height:220px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
         <p style="color:var(--gray);font-size:.85rem;">[ Product photo — HV3 High Power Modules ]</p>
       </div>
@@ -94,6 +106,10 @@
           </tbody>
         </table>
       </div>
+      <div class="action-row">
+        <a class="btn" href="../quote-high-power.html">Request a Quote</a>
+        <a class="btn-outline" href="../technical-manual.html?model=HV3+%2B+6000+V">Request Technical Manual</a>
+      </div>
     </div>
 
     <!-- Custom -->
@@ -104,7 +120,9 @@
         tailored HV modules to specification at competitive prices and within a limited timeframe —
         for both ground and space applications.
       </p>
-      <a class="btn" href="../contact.html">Request a Quote</a>
+      <div class="action-row">
+        <a class="btn" href="../quote-single-custom.html">Request Information</a>
+      </div>
     </div>
 
   </div>
@@ -112,9 +130,9 @@
 
 <footer>
   <div class="footer-links">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Cookies Policy</a>
-    <a href="#">Terms and Conditions</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../cookies.html">Cookies Policy</a>
+    <a href="../terms.html">Terms and Conditions</a>
   </div>
   <p>&copy; 2026 I-Conomy S.r.l. &mdash; Innovation-Economy &mdash; Aerospazio Tecnologie spin-off</p>
 </footer>
