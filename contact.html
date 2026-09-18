@@ -39,7 +39,7 @@
   <div class="container">
     <p class="section-label">Get in Touch</p>
     <h1><strong>Contact</strong> Us</h1>
-    <p>Need to contact us? Fill out the form or send an email directly to <a href="mailto:info@i-conomy.com" style="color:#7eb8f7">info@i-conomy.com</a>.</p>
+    <p>Need to contact us? Fill out the form or send an email directly to <a href="mailto:info@i-conomy.com" style="color:#8FB4EE">info@i-conomy.com</a>.</p>
   </div>
 </div>
 
@@ -58,20 +58,23 @@
       </div>
       <div>
         <p class="section-label">Send a Message</p>
-        <form action="mailto:info@i-conomy.com" method="post" enctype="text/plain" style="gap:.85rem;">
+        <form action="https://api.web3forms.com/submit" method="POST" style="gap:.85rem;">
+
+        <input type="hidden" name="access_key" value="729c32b2-30e8-497e-abf8-3c31e83d9ba8">
+        <input type="hidden" name="subject" value="New contact message - i-conomy.com">
+        <input type="hidden" name="from_name" value="i-conomy.com website">
+        <input type="hidden" name="redirect" value="https://i-conomy.com/thanks.html">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
           <label for="c-name" style="font-size:.88rem;font-weight:600;color:var(--navy);">Name <span style="color:#c0392b">*</span></label>
           <input type="text"  id="c-name"    name="name"    placeholder="Your name"  required>
           <label for="c-email" style="font-size:.88rem;font-weight:600;color:var(--navy);margin-top:.2rem;">Email <span style="color:#c0392b">*</span></label>
           <input type="email" id="c-email"   name="email"   placeholder="Your email" required>
           <label for="c-subject" style="font-size:.88rem;font-weight:600;color:var(--navy);margin-top:.2rem;">Subject</label>
-          <input type="text"  id="c-subject" name="subject" placeholder="Subject">
+          <input type="text"  id="c-subject" name="Enquiry Subject" placeholder="Subject">
           <label for="c-message" style="font-size:.88rem;font-weight:600;color:var(--navy);margin-top:.2rem;">Message <span style="color:#c0392b">*</span></label>
           <textarea           id="c-message" name="message" placeholder="Your message" required></textarea>
           <button type="submit">Send Message</button>
-          <div class="form-sent" role="alert">
-            Your email client should open now. If nothing happened, write directly to
-            <a href="mailto:info@i-conomy.com">info@i-conomy.com</a>.
-          </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>

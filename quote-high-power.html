@@ -5,29 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Quote – High Power Modules – I-Conomy</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    .quote-wrap { max-width: 680px; margin: 0 auto; }
-    .req-note { font-size: .85rem; color: #c0392b; margin-bottom: 1.5rem; }
-    .quote-form { display: flex; flex-direction: column; gap: 1.4rem; }
-    .field { display: flex; flex-direction: column; gap: .4rem; }
-    .field label { font-size: .88rem; font-weight: 600; color: var(--navy); }
-    .field label .req { color: #c0392b; margin-left: .15rem; }
-    .field input, .field select, .field textarea {
-      padding: .7rem .9rem; border: 1px solid var(--border); border-radius: 3px;
-      font-family: inherit; font-size: .95rem; color: var(--text);
-      background: var(--light); transition: border-color .2s, background .2s; width: 100%;
-    }
-    .field input:focus, .field select:focus, .field textarea:focus {
-      outline: none; border-color: var(--accent); background: var(--white);
-    }
-    .field textarea { min-height: 130px; resize: vertical; }
-    .quote-form button[type="submit"] {
-      align-self: flex-start; padding: .75rem 2.4rem;
-      background: var(--accent); color: #fff; border: none; border-radius: 3px;
-      font-size: .97rem; font-weight: 600; cursor: pointer; transition: background .2s;
-    }
-    .quote-form button[type="submit"]:hover { background: #1e6bbf; }
-  </style>
 </head>
 <body>
 
@@ -68,7 +45,13 @@
   <div class="container">
     <div class="quote-wrap">
       <p class="req-note">* = Required Field</p>
-      <form class="quote-form" action="mailto:info@i-conomy.com" method="post" enctype="text/plain">
+      <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="729c32b2-30e8-497e-abf8-3c31e83d9ba8">
+        <input type="hidden" name="subject" value="Quote request - High Power Modules">
+        <input type="hidden" name="from_name" value="i-conomy.com website">
+        <input type="hidden" name="redirect" value="https://i-conomy.com/thanks.html">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="field">
           <label for="name">Name <span class="req">*</span></label>
@@ -82,7 +65,7 @@
 
         <div class="field">
           <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" name="Email Address" required>
+          <input type="email" id="email" name="email" required>
         </div>
 
         <div class="field">
@@ -109,11 +92,7 @@
         </div>
 
         <button type="submit">Request</button>
-          <div class="form-sent" role="alert">
-            Your email client should open now. If nothing happened, write directly to
-            <a href="mailto:info@i-conomy.com">info@i-conomy.com</a>.
-          </div>
-
+        <div class="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
   </div>

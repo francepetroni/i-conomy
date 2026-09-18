@@ -34,11 +34,41 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Mailto form: show fallback notice after submit
-  document.querySelectorAll('form[action^="mailto:"]').forEach(function (form) {
-    form.addEventListener('submit', function () {
-      var notice = form.querySelector('.form-sent');
-      if (notice) setTimeout(function () { notice.style.display = 'block'; }, 800);
+  // Web3Forms: submit over fetch so the visitor stays on the page.
+  // Without JS the form still POSTs normally and lands on thanks.html.
+  document.querySelectorAll('form[action*="api.web3forms.com"]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.form-status');
+      var button = form.querySelector('button[type="submit"]');
+      var label  = button ? button.textContent : '';
+
+      if (status) { status.className = 'form-status is-pending'; status.textContent = 'Sending…'; }
+      if (button) { button.disabled = true; button.textContent = 'Sending…'; }
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
+        .then(function (data) {
+          if (data.success) {
+            form.reset();
+            if (status) {
+              status.className = 'form-status is-ok';
+              status.textContent = 'Thank you — your message has been sent. We will get back to you shortly.';
+            }
+          } else {
+            throw new Error(data.message || 'submit failed');
+          }
+        })
+        .catch(function () {
+          if (status) {
+            status.className = 'form-status is-error';
+            status.innerHTML = 'Sorry, the message could not be sent. Please email us directly at ' +
+                               '<a href="mailto:info@i-conomy.com">info@i-conomy.com</a>.';
+          }
+        })
+        .finally(function () {
+          if (button) { button.disabled = false; button.textContent = label; }
+        });
     });
   });
 

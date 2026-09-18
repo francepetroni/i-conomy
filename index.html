@@ -14,7 +14,7 @@
     <a class="logo" href="index.html"><img src="assets/img/logo/logo.webp" alt="I-Conomy" class="logo-img"></a>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <div class="dropdown">
         <a href="modules/index.html">HV Modules</a>
         <div class="dropdown-menu">
@@ -31,160 +31,254 @@
         </div>
       </div>
       <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-sm" style="margin-left:.5rem;">Request a quote</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="home">
-  <div class="container">
-    <p class="section-label" style="color:rgba(255,255,255,.72);">The best way to deliver high-voltage power</p>
-    <h1>ITAR-FREE HV Modules<br><strong>Space-Proven. In Orbit.</strong></h1>
-    <p class="sub">Off-the-shelf DC/DC converters from ±150 V to ±6000 V — designed for space, tested for radiation, delivered at competitive prices and in limited timeframes.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:3rem;">
-      <a class="btn" href="modules/index.html">Browse HV Modules</a>
-      <a class="btn" href="contact.html" style="background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff;">Contact Us</a>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><strong>3,000+</strong><span>Units Delivered</span></div>
-      <div class="stat"><strong>30+</strong><span>Years of R&amp;D</span></div>
-      <div class="stat"><strong>100%</strong><span>Mission Success</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPANY INTRO -->
-<section class="bg-light">
-  <div class="container">
-    <div class="two-col">
-      <div>
-        <p class="section-label">Company Profile</p>
-        <h2>State-of-the-art DC/DC converters for <strong>space applications</strong></h2>
-        <p class="lead">
-          I-Conomy S.r.l. is one of the few companies in the world capable to provide a complete
-          range of off-the-shelf High Voltage DC/DC converters for Space and High Reliability
-          applications with state-of-the-art performance and proved flight heritage.
-        </p>
-        <p style="color:var(--gray);font-size:.95rem;margin-bottom:1.4rem;">
-          Making a high-voltage power supply is not difficult, but if you want it to work for years
-          in space and in any vacuum conditions and perhaps even be ITAR-free, you should rely on the
-          30 years of experience of those who have made technical and technological choices that have
-          led to the launch of over 3,000 high-voltage power supplies and some of the world’s largest
-          high-voltage systems with 100% success rates.
-        </p>
-        <a class="btn" href="about.html">Learn More</a>
+<section style="padding-top:4.5rem;padding-bottom:4rem;">
+  <div class="container" style="display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center;">
+    <div>
+      <span style="display:inline-flex;align-items:center;gap:.55rem;height:2.15rem;padding:0 .9rem;border:1px solid #D7E3F5;border-radius:999px;background:var(--blue-soft);font-size:.82rem;font-weight:600;color:#235BB5;">
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block;"></span>
+        CSES-01 — in orbit since February 2018
+      </span>
+      <h1 style="margin:1.2rem 0 1.3rem;max-width:640px;">High voltage for missions <span class="dim">nobody can service.</span></h1>
+      <p class="lead" style="margin-bottom:1.8rem;">ITAR-free DC/DC converters from ±150 V to ±6000 V, qualified for vacuum, outgassing and corona — off the shelf, and backed by thirty years of design criteria.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:1.8rem;">
+        <a class="btn" href="modules/index.html">Browse HV Modules</a>
+        <a class="btn btn-outline" href="contact.html">Request the technical manual</a>
       </div>
-      <div>
-        <p class="section-label">Our Expertise</p>
-        <h2>End-to-end <strong>high-voltage solutions</strong></h2>
-        <ul class="feature-list">
-          <li>HV power supplies guaranteed to operate in vacuum conditions</li>
-          <li>Protection against outgassing risks and corona effects</li>
-          <li>Space-use HV cables — shielded and unshielded</li>
-          <li>Standard modules and fully custom HV systems</li>
-          <li>Flexible cables for superior vibration and shock resistance</li>
-        </ul>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.3rem;font-family:var(--mono);font-size:.82rem;color:var(--gray-mid);">
+        <span>±150 V … ±6000 V</span>
+        <span style="width:1px;height:14px;background:var(--border);display:inline-block;"></span>
+        <span>+12 V input</span>
+        <span style="width:1px;height:14px;background:var(--border);display:inline-block;"></span>
+        <span>ITAR-free</span>
       </div>
     </div>
+    <figure style="margin:0;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--light);">
+      <img src="assets/img/products/custom/custom-hv-system.webp" alt="Custom HV system: modules mounted in a machined housing" style="width:100%;height:280px;object-fit:cover;display:block;">
+      <figcaption style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.2rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:.76rem;color:var(--gray-mid);">
+        <span>Custom HV system — machined housing</span>
+        <span style="color:var(--blue);">FM · delivered</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ENGINEERING CRITERIA -->
-<section class="bg-white">
+<!-- TRUST STRIP -->
+<section class="trust-strip">
   <div class="container">
-    <p class="section-label">Engineering Foundations</p>
-    <h2>Three decades of <strong>research, distilled</strong></h2>
-    <p class="lead">
-      More than 30 years of extensive research and development conducted in the fields of space and
-      nuclear physics have resulted in defining:
-    </p>
-    <div class="two-col" style="margin-top:1.5rem;">
-      <ul class="feature-list">
-        <li><strong>Design criteria</strong> — derating rules for COTS components, robust topologies selection.</li>
-        <li><strong>Quality level of the soldering process</strong> — optimal solder pads design for solderability, inspection rules.</li>
-      </ul>
-      <ul class="feature-list">
-        <li><strong>Protection from discharges and corona effects</strong> — suitable coatings and pottings materials, PCB routing and mechanical 3D finishing.</li>
-        <li><strong>An optimal network</strong> of reliable suppliers and collaborators.</li>
-      </ul>
+    <p class="section-label">Supplying European space and research institutions</p>
+    <div class="trust-logos">
+      <img src="assets/img/collaborations/collab-01.webp" alt="ASI — Agenzia Spaziale Italiana">
+      <img src="assets/img/collaborations/collab-09.webp" alt="INAF-IAPS — Istituto di Astrofisica e Planetologia Spaziali">
+      <img src="assets/img/collaborations/collab-06.webp" alt="INFN — Laboratori Nazionali di Frascati">
+      <img src="assets/img/collaborations/collab-10.webp" alt="INGV — Istituto Nazionale di Geofisica e Vulcanologia">
+      <img src="assets/img/collaborations/collab-03a.webp" alt="Alma Mater Studiorum — Università di Bologna">
+      <img src="assets/img/collaborations/collab-02a.webp" alt="Università degli Studi di Roma Tor Vergata">
     </div>
-    <p style="color:var(--gray);font-size:.95rem;margin-top:1.4rem;">
-      Resulting in more than 3,000 flight models delivered on time with 100% success.
-    </p>
   </div>
 </section>
 
-<!-- PRODUCT HIGHLIGHTS -->
+<!-- STATS -->
+<section style="padding-top:0;padding-bottom:5rem;">
+  <div class="container">
+    <div class="stats-panel">
+      <div><strong>3,000+</strong><span>Flight models delivered</span></div>
+      <div><strong>100%</strong><span>Mission success</span></div>
+      <div><strong>30+</strong><span>Years of internal R&amp;D</span></div>
+      <div><strong class="accent">8 years</strong><span>CSES-01 continuously in orbit</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
 <section class="bg-light">
   <div class="container">
-    <p class="section-label">Products</p>
-    <h2>HV Modules &amp; <strong>Custom Systems</strong></h2>
-    <p class="lead">A complete range of high-voltage power solutions engineered for the harshest environments.</p>
+    <div style="text-align:center;max-width:640px;margin:0 auto 3rem;">
+      <p class="section-label" style="justify-content:center;">Catalogue</p>
+      <h2>Three families, <span class="dim">one supplier</span></h2>
+      <p class="lead" style="margin:0 auto;">Off-the-shelf modules you can order by part number, and complete systems built around them.</p>
+    </div>
     <div class="card-grid">
-      <a class="card" href="modules/single-channel.html" style="text-decoration:none;display:block;">
-        <h4>Single Channel HV Modules</h4>
-        <p>Off-the-shelf HV3 series converters from ±150 V to ±6000 V. Input +12 V. Positive and negative configurations available.</p>
-        <span class="tag">150 V – 6000 V</span><span class="tag">ITAR-FREE</span>
+      <a class="card" href="modules/single-channel.html" style="text-decoration:none;display:block;padding:0;overflow:hidden;">
+        <img src="assets/img/products/low-power/low-power-1.webp" alt="HV3 single-channel module" style="width:100%;height:190px;object-fit:cover;display:block;">
+        <div style="padding:1.7rem;">
+          <p class="tag" style="margin-bottom:.9rem;">±150 V – 6000 V</p>
+          <h4>Single Channel HV Modules</h4>
+          <p>Off-the-shelf HV3 series converters. Input +12 V. Positive and negative configurations available.</p>
+          <span class="tag">ITAR-FREE</span>
+        </div>
       </a>
-      <a class="card" href="modules/piezoelectric.html" style="text-decoration:none;display:block;">
-        <h4>HV Modules for Piezoelectric Actuators</h4>
-        <p>4-quadrant fast and very low noise HV systems for capacitive loads. −700 V to +700 V. Proven on IBIS2 / INAF.</p>
-        <span class="tag">4-Quadrant</span><span class="tag">Very Low Noise</span>
+      <a class="card" href="modules/piezoelectric.html" style="text-decoration:none;display:block;padding:0;overflow:hidden;">
+        <img src="assets/img/products/piezo/piezo-rack.webp" alt="HVPA rack for piezoelectric actuators" style="width:100%;height:190px;object-fit:cover;display:block;">
+        <div style="padding:1.7rem;">
+          <p class="tag" style="margin-bottom:.9rem;">−700 V – +700 V</p>
+          <h4>HV Modules for Piezoelectric Actuators</h4>
+          <p>4-quadrant fast and very low noise HV systems for capacitive loads. Proven on IBIS2 / INAF.</p>
+          <span class="tag">4-Quadrant</span>
+        </div>
       </a>
-      <a class="card" href="modules/custom-systems.html" style="text-decoration:none;display:block;">
-        <h4>Custom HV Systems</h4>
-        <p>Full systems with aluminium housing and custom control board. Standard or bespoke HV modules. Tailored to mission specifications.</p>
-        <span class="tag">Custom Housing</span><span class="tag">Space &amp; Ground</span>
+      <a class="card" href="modules/custom-systems.html" style="text-decoration:none;display:block;padding:0;overflow:hidden;">
+        <img src="assets/img/products/high-power/high-power-1.webp" alt="High-power custom HV assembly" style="width:100%;height:190px;object-fit:cover;display:block;">
+        <div style="padding:1.7rem;">
+          <p class="tag" style="margin-bottom:.9rem;">Built to order</p>
+          <h4>Custom HV Systems</h4>
+          <p>Full systems with aluminium housing and custom control board. Tailored to mission specifications.</p>
+          <span class="tag">Custom Housing</span>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- HERITAGE TEASER -->
-<section class="bg-white">
+<!-- CAPABILITIES -->
+<section>
   <div class="container">
-    <p class="section-label">Heritage</p>
-    <h2>Proven in <strong>space</strong></h2>
-    <p class="lead">
-      From Chinese satellites in orbit to solar physics instruments at INAF — I-Conomy modules
-      have been trusted in some of the most demanding missions in the world.
-    </p>
-    <a class="btn" href="heritage.html">View Heritage</a>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:end;margin-bottom:2.6rem;">
+      <div>
+        <p class="section-label">Engineering foundations</p>
+        <h2 style="margin-bottom:0;">What thirty years of R&amp;D <span class="dim">actually buys you</span></h2>
+      </div>
+      <p class="lead" style="margin-bottom:0;">Design criteria, soldering quality levels, discharge protection and a supplier network — the reasons a module survives launch and a decade of vacuum.</p>
+    </div>
+    <div class="capability-grid">
+      <div class="capability-card">
+        <span class="capability-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z"></path></svg></span>
+        <h3>Guaranteed in vacuum</h3>
+        <p>Power supplies specified to operate in any vacuum condition, not merely to survive the test.</p>
+      </div>
+      <div class="capability-card">
+        <span class="capability-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l3 7 4-14 3 7h5"></path></svg></span>
+        <h3>Corona &amp; outgassing control</h3>
+        <p>Coating and potting materials, PCB routing and 3D mechanical finishing chosen against discharge.</p>
+      </div>
+      <div class="capability-card">
+        <span class="capability-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18"></path><circle cx="12" cy="12" r="9"></circle></svg></span>
+        <h3>ITAR-free by construction</h3>
+        <p>An Italian supply chain and component selection that keeps your programme free of export restrictions.</p>
+      </div>
+      <div class="capability-card">
+        <span class="capability-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M9 9h6v6H9z"></path></svg></span>
+        <h3>Derating rules for COTS parts</h3>
+        <p>Robust topology selection and derating criteria refined across three decades of flight builds.</p>
+      </div>
+      <div class="capability-card">
+        <span class="capability-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c4 0 4 10 8 10s4-10 8-10"></path></svg></span>
+        <h3>Space-grade HV cabling</h3>
+        <p>Shielded and unshielded flexible cables for superior vibration and shock resistance.</p>
+      </div>
+      <div class="capability-card">
+        <span class="capability-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path></svg></span>
+        <h3>Modules or whole systems</h3>
+        <p>From a single part number to a complete HV system with its own control board and housing.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- COLLABORATION STRIP -->
-<section class="collab-strip">
+<!-- STATEMENT -->
+<section class="bg-light">
   <div class="container">
-    <p class="section-label">Trusted by Leading Research &amp; Space Institutions</p>
-    <div class="collab-logos">
-      <img src="assets/img/collaborations/collab-01.webp"   alt="ASI — Agenzia Spaziale Italiana">
-      <img class="seal" src="assets/img/collaborations/collab-02a.webp" alt="Università degli Studi di Roma Tor Vergata">
-      <img src="assets/img/collaborations/collab-02b.webp" alt="INFN — Sezione di Roma Tor Vergata">
-      <img class="seal" src="assets/img/collaborations/collab-03a.webp" alt="Alma Mater Studiorum — Università di Bologna">
-      <img class="seal" src="assets/img/collaborations/collab-03b.webp" alt="INFN — Sezione di Bologna">
-      <img class="seal" src="assets/img/collaborations/collab-04a.webp" alt="Università degli Studi di Trento">
-      <img src="assets/img/collaborations/collab-04b.webp" alt="TIFPA — Trento Institute for Fundamental Physics and Applications">
-      <img class="seal" src="assets/img/collaborations/collab-05.webp"   alt="Università degli Studi di Torino">
-      <img src="assets/img/collaborations/collab-05b.webp" alt="INFN — Sezione di Torino">
-      <img class="seal" src="assets/img/collaborations/collab-06.webp"   alt="INFN — Laboratori Nazionali di Frascati">
-      <img class="seal" src="assets/img/collaborations/collab-07a.webp" alt="Università degli Studi di Napoli Federico II">
-      <img class="seal" src="assets/img/collaborations/collab-07b.webp" alt="INFN — Sezione di Napoli">
-      <img src="assets/img/collaborations/collab-08.webp"   alt="UTIU — Università Telematica Internazionale Uninettuno, Roma">
-      <img class="seal" src="assets/img/collaborations/collab-09.webp"   alt="INAF-IAPS — Istituto di Astrofisica e Planetologia Spaziali">
-      <img class="seal" src="assets/img/collaborations/collab-10.webp"  alt="INGV — Istituto Nazionale di Geofisica e Vulcanologia">
-      <img src="assets/img/collaborations/collab-11.webp"  alt="IFAC — CNR, Firenze">
+    <figure class="statement">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zm0 0v4c0 3.5-2 5.5-5 6M20 7h-3.5A2.5 2.5 0 0 0 14 9.5V13h6V7zm0 0v4c0 3.5-2 5.5-5 6"></path></svg>
+      <blockquote>Making a high-voltage power supply is not difficult. But if you want it to work for years in space and in any vacuum condition — and perhaps even be ITAR-free — you should rely on the thirty years of experience of those who have made the technical and technological choices that led to the launch of over 3,000 high-voltage power supplies, and some of the world's largest high-voltage systems, with 100% success rates.</blockquote>
+      <figcaption><span class="rule"></span>I-Conomy S.r.l. — Aerospazio Tecnologie spin-off</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section>
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:1.8rem;flex-wrap:wrap;">
+      <div>
+        <p class="section-label">Flight heritage</p>
+        <h2 style="margin-bottom:0;">Already up there</h2>
+      </div>
+      <a href="heritage.html" class="btn btn-outline btn-sm">All missions</a>
+    </div>
+    <div class="heritage-table">
+      <div class="heritage-row head">
+        <span>Mission</span><span>Hardware supplied</span><span>Status</span>
+      </div>
+      <div class="heritage-row">
+        <span class="mission">CSES-01</span>
+        <span class="hw">62 FM HV3 −1200 V · 14 voltage dividers · 12 HV3 +150 V</span>
+        <span class="status-chip live">In orbit · 02.2018</span>
+      </div>
+      <div class="heritage-row">
+        <span class="mission">CSES-02</span>
+        <span class="hw">80 modules</span>
+        <span class="status-chip">Delivered</span>
+      </div>
+      <div class="heritage-row">
+        <span class="mission">IBIS2 — INAF, Rome</span>
+        <span class="hw">3 × four-quadrant ±700 V</span>
+        <span class="status-chip">Operating</span>
+      </div>
+      <div class="heritage-row">
+        <span class="mission">Beijing Conveyi</span>
+        <span class="hw">HV3 ±3000 V · 150 µA</span>
+        <span class="status-chip">Delivered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <h2>Send us the mission profile.</h2>
+        <p>Output voltage, current, load and environment — we answer with a part number from the catalogue or a proposal for a custom system.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="contact.html">Request a quote</a>
+        <a class="btn btn-outline" href="contact.html">Technical manual</a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="cookies.html">Cookies Policy</a>
-    <a href="terms.html">Terms and Conditions</a>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo/logo.webp" alt="I-Conomy" style="width:28px;height:28px;display:block;">
+          <span>I-Conomy</span>
+        </div>
+        <p class="footer-about">High-voltage DC/DC converters and custom HV systems for space and high-reliability applications. Aerospazio Tecnologie spin-off.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <a href="modules/single-channel.html">Single Channel Modules</a>
+        <a href="modules/piezoelectric.html">Piezoelectric Drives</a>
+        <a href="modules/custom-systems.html">Custom HV Systems</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About I-Conomy</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 I-Conomy S.r.l. — Innovation-Economy</span>
+      <span style="font-family:var(--mono);">Livorno, Italy</span>
+    </div>
   </div>
-  <p>&copy; 2026 I-Conomy S.r.l. &mdash; Innovation-Economy &mdash; Aerospazio Tecnologie spin-off</p>
 </footer>
 
 <script src="assets/js/main.js"></script>
