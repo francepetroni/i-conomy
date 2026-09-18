@@ -255,20 +255,26 @@ nav a:focus-visible { outline: 2px solid #7eb8f7; outline-offset: -3px; }
 .breadcrumb .sep { margin: 0 .45rem; opacity: .5; }
 
 /* ── COLLABORATION STRIP ── */
-.collab-strip { background: var(--navy); padding: 3rem 2rem; }
-.collab-strip .section-label { color: #7eb8f7; text-align: center; margin-bottom: 1.5rem; }
+.collab-strip {
+  background: #fff; padding: 3.5rem 2rem;
+  border-top: 1px solid var(--border);
+}
+.collab-strip .section-label { text-align: center; margin-bottom: 2rem; }
 .collab-logos {
   display: flex; flex-wrap: wrap; align-items: center;
-  justify-content: center; gap: 1.8rem 3rem;
-  max-width: 900px; margin: 0 auto;
+  justify-content: center; gap: 2rem 2.5rem;
+  max-width: 1000px; margin: 0 auto;
 }
+/* Logos ship with opaque white backgrounds, so they need a light ground —
+   a dark strip would render them as white rectangles.
+   Max-only sizing: several originals are tiny (TIFPA is 72x26) and upscaling blurs them.
+   Round seals get more height so they don't read as smaller than the wordmarks. */
 .collab-logos img {
-  height: 44px; width: auto; max-width: 120px;
+  max-height: 46px; max-width: 150px;
+  width: auto; height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1); opacity: .65;
-  transition: opacity .2s;
 }
-.collab-logos img:hover { opacity: 1; }
+.collab-logos img.seal { max-height: 66px; }
 
 /* ── FORM SENT NOTICE ── */
 .form-sent {
@@ -290,6 +296,18 @@ nav a:focus-visible { outline: 2px solid #7eb8f7; outline-offset: -3px; }
 }
 .media-mention-text p { font-size: .85rem; color: var(--gray); margin-bottom: .3rem; }
 .media-mention-text strong { color: var(--navy); font-size: .88rem; }
+
+/* ── PARTNER LOGOS (light background — keeps original colours) ── */
+.partner-logos {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 1.6rem 2.4rem; margin: 1.6rem 0 0;
+}
+.partner-logos img {
+  max-height: 46px; max-width: 150px;
+  width: auto; height: auto;
+  object-fit: contain;
+}
+.partner-logos img.seal { max-height: 66px; }
 
 /* ── FOOTER ── */
 footer {

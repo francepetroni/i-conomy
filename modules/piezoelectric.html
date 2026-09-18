@@ -23,8 +23,13 @@
           <a href="piezoelectric.html">HV Modules for Piezoelectric Actuators</a>
         </div>
       </div>
-      <a href="../about.html">About</a>
-      <a href="../heritage.html">Heritage</a>
+      <div class="dropdown">
+        <a href="../about.html">About</a>
+        <div class="dropdown-menu">
+          <a href="../about.html">About I-Conomy</a>
+          <a href="../heritage.html">Heritage</a>
+        </div>
+      </div>
       <a href="../contact.html">Contact</a>
     </nav>
   </div>
@@ -49,17 +54,75 @@
       <h3>Single Channel 4-Quadrant Modules — −700 V to +700 V</h3>
       <div class="product-img-gallery" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
         <img src="../assets/img/products/piezo/hvpa-module-lab.webp" alt="HVPA ±700 V module in lab" loading="lazy">
-        <img src="../assets/img/products/piezo/ibis2-optical-bench.webp" alt="IBIS2 optical bench at INAF — powered by I-Conomy HVPA modules" loading="lazy">
+        <img src="../assets/img/products/piezo/ibis2-optical-bench.webp" alt="IBIS 2.0 with new optical configuration mounted on the optical bench of the laboratory at INAF — Osservatorio Astronomico di Roma" loading="lazy">
       </div>
+      <p style="font-size:.8rem;color:var(--gray);margin:-.6rem 0 1.4rem;font-style:italic;">
+        Figure 1: IBIS 2.0 with new optical configuration mounted on the optical bench of the
+        laboratory at INAF – Osservatorio Astronomico di Roma.
+      </p>
       <p style="color:var(--gray);font-size:.95rem;margin-bottom:1rem;">
-        High Voltage 4-quadrant power supply for fast, high-precision piezoelectric actuators.
-        Capable of both supplying and absorbing current, featuring negative-to-positive output
-        voltages characterised by very low noise.
+        Piezoelectric actuators facilitate precise positioning at subnanometer accuracies. For specific
+        applications, specialised four-quadrant high-voltage power supplies are required. These power
+        supplies are capable of both supplying and absorbing current, featuring negative to positive
+        output voltages characterised by very low noise and, at times, high slew rates.
+      </p>
+      <p style="color:var(--gray);font-size:.95rem;margin-bottom:1rem;">
+        I-Conomy specialises in the design and manufacture of cutting-edge custom electronics tailored
+        to customer specifications. In this particular instance, the power supply plays a crucial role
+        in enabling rapid scanning of frequencies emitted from a Fabry–Pérot interferometer (FPI) or
+        etalon, an optical cavity composed of two parallel reflecting surfaces (thin mirrors). Optical
+        waves can traverse the optical cavity only when resonating with it. The Fabry–Pérot
+        interferometer is an integral component of the Interferometric BIdimensional Spectrometer 2.0
+        (IBIS 2.0).
       </p>
       <p style="color:var(--gray);font-size:.95rem;margin-bottom:1.5rem;">
-        Designed for the Interferometric BIdimensional Spectrometer 2.0 (IBIS 2.0) at INAF, Rome —
-        a spectropolarimetric solar imaging instrument requiring fast, precise piezoelectric
-        actuator control with capacitive loads up to 25 nF.
+        In the event of noise affecting the power supply for the piezoelectric actuator, the output
+        frequency becomes unstable. Given the necessity for swift scans of output frequencies, voltage
+        changes must occur within milliseconds. IBIS 2.0 is a focal plane instrument developed for
+        acquiring high-cadence spectroscopic and spectropolarimetric images of the solar photosphere
+        and chromosphere.
+      </p>
+
+      <h4 style="font-size:1rem;color:var(--navy);margin-bottom:.7rem;">Scientific objectives</h4>
+      <p style="color:var(--gray);font-size:.95rem;margin-bottom:.8rem;">
+        IBIS 2.0 is anticipated to exhibit a high level of stability in imaging spectropolarimetry,
+        with consistently repeatable performance. This characteristic holds significant utility for
+        various scientific objectives, including:
+      </p>
+      <ul class="feature-list" style="margin-bottom:1.5rem;">
+        <li>Conducting a systematic survey of the quiet Sun through daily data acquisition at the solar disc centre, thereby facilitating solar irradiance measurements.</li>
+        <li>Investigating magnetohydrodynamic (MHD) wave phenomena with respect to spatial position, time, and atmospheric height in and around key features of the solar atmosphere.</li>
+        <li>Describing spectropolarimetric signatures observed in Stokes profiles during magnetic flux cancellation in the lower solar atmosphere.</li>
+        <li>Deriving signatures of rising plasma in emerging flux regions, such as time delays during passage through different atmospheric heights and vertical velocities.</li>
+      </ul>
+      <p style="color:var(--gray);font-size:.95rem;margin-bottom:1rem;">
+        IBIS 2.0 is planned to be utilised in coordinated observing campaigns alongside ground-based
+        and space telescopes. This collaborative approach aims to capitalise on the complementary
+        features of IBIS 2.0 with other existing and upcoming instruments dedicated to solar studies.
+      </p>
+      <p style="color:var(--gray);font-size:.95rem;margin-bottom:1.5rem;">
+        To effectively address the outlined scientific requirements, IBIS 2.0 incorporates a minimum
+        field of view (FOV) of approximately 60” × 60” and achieves a spatial resolution of about
+        0”.16. A key technical attribute enabling satisfaction of scientific objectives is the
+        instrument’s wide flexibility in spectral sampling, allowing the use of varying numbers of
+        points along each line and different steps. Two primary observation modes are mandated for
+        each wavelength scan: a sequential scan of spectral lines, capturing one image for each
+        spectral point, and the option to capture multiple images at the same spectral points for
+        each step. Furthermore, it is imperative to ensure the capability to sample more than one
+        spectral line during an observing run, both sequentially and through repeated scans of each
+        line before transitioning to the next one.
+      </p>
+
+      <h4 style="font-size:1rem;color:var(--navy);margin-bottom:.7rem;">Space qualification roadmap</h4>
+      <p style="color:var(--gray);font-size:.95rem;margin-bottom:1rem;">
+        Currently, these power supplies are used primarily in large ground-based telescopes.
+        However, it is important to note that the project was conceived with a specific focus on
+        potential applications in space. The components of these power supplies are selected from
+        those that are radiation-resistant, and qualification tests — including thermal,
+        vibrational, and radiation resistance tests at module level — will be conducted shortly.
+      </p>
+      <p style="color:var(--gray);font-size:.95rem;margin-bottom:1.5rem;">
+        IBIS 2.0 will be installed at the Osservatorio del Roque de Los Muchachos in the Canary Islands.
       </p>
       <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
         <span class="tag">−700 V to +700 V</span>
