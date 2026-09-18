@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /thanks.html
+Disallow: /zh/thanks.html
 
 Sitemap: https://i-conomy.com/sitemap.xml
