@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+
+# conversion + confirmation pages: reachable, but not worth indexing
 Disallow: /thanks.html
 Disallow: /zh/thanks.html
 
