@@ -183,6 +183,15 @@ h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 1re
 .card h4 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy); margin-bottom: .6rem; }
 .card p { font-size: .92rem; color: var(--gray); margin-bottom: .9rem; line-height: 1.6; }
 
+/* Product photo above the card title. Full bleed: the card's 1.9rem padding is
+   cancelled on three sides so the image meets the border, with the top corners
+   matching the card radius minus its 1px border. */
+.card-media {
+  display: block; height: 190px; object-fit: cover;
+  width: calc(100% + 3.8rem); margin: -1.9rem -1.9rem 1.4rem;
+  border-radius: 15px 15px 0 0; background: var(--light);
+}
+
 /* ── TAG ── */
 .tag {
   display: inline-block; font-family: var(--mono); font-size: .74rem; background: var(--blue-chip);
@@ -286,13 +295,19 @@ nav a:focus-visible { outline: 2px solid var(--blue); outline-offset: -3px; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: .7rem; margin-bottom: 1.5rem;
 }
-/* contain, not cover: most module shots are portrait (2048x2560) and a 4:3 crop
-   would cut the product off at both ends. */
+/* contain, not cover: a crop would cut the product off at both ends. Each
+   gallery sets --tile-aspect to match its own photos, so the contain bands stay
+   minimal. height:auto is required: the intrinsic height attribute on every
+   <img> is a presentational hint that otherwise defeats aspect-ratio and
+   stretches the tile to the full pixel height of the file. */
 .product-img-gallery img {
-  width: 100%; border-radius: 10px; object-fit: contain;
-  aspect-ratio: 4/3; display: block;
+  width: 100%; height: auto; aspect-ratio: var(--tile-aspect, 4/3);
+  border-radius: 10px; object-fit: contain; display: block;
   background: var(--light); border: 1px solid var(--border);
 }
+.gallery-portrait { --tile-aspect: 4/5; }   /* 2048x2560 module shots */
+.gallery-wide     { --tile-aspect: 3/2; }   /* bench and rack photos */
+.gallery-square   { --tile-aspect: 1/1; }   /* 289x285 housing shot */
 
 /* ── BREADCRUMB ── */
 .breadcrumb {
