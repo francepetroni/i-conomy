@@ -377,7 +377,7 @@ header {
 nav { display: flex; align-items: center; gap: .5rem; }
 nav a {
   color: var(--gray); text-decoration: none;
-  padding: 0 1rem; height: 76px;
+  padding: 0 .8rem; height: 76px;
   display: flex; align-items: center;
   font-size: .92rem; font-weight: 500;
   transition: color .15s;
@@ -408,7 +408,7 @@ nav a.active { color: var(--navy); }
 }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 2px; }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .nav-toggle { display: block; }
   nav {
     display: none; flex-direction: column; align-items: stretch;
@@ -962,7 +962,7 @@ html[lang^="zh"] h1, html[lang^="zh"] h2,
 html[lang="ja"] h1, html[lang="ja"] h2,
 html[lang="ko"] h1, html[lang="ko"] h2 { letter-spacing: 0; }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .lang-switch { margin: .8rem 1.25rem; align-self: flex-start; }
   .lang-menu { display: block; height: auto; }
   .lang-menu .dropdown-menu { position: static; min-width: 0; }
@@ -1125,3 +1125,67 @@ html[lang="ko"] h1, html[lang="ko"] h2 { letter-spacing: 0; }
   border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #fff; }
 .video-facade:hover .video-play, .video-facade:focus-visible .video-play { background: #c00; }
 .video-frame { border: none; width: 100%; aspect-ratio: 16/9; border-radius: 4px; display: block; }
+
+/* ── LEAD CAPTURE ── */
+/* "Get a quote" stays visible in the header on every page */
+nav a.nav-cta {
+  height: auto; margin-left: .5rem; padding: .55rem 1.05rem;
+  background: var(--blue); color: #fff; border-radius: 8px; font-weight: 600;
+  transition: background .15s;
+}
+nav a.nav-cta:hover, nav a.nav-cta.active { background: var(--blue-dark); color: #fff; }
+@media (max-width: 1200px) {
+  nav a.nav-cta { margin: .9rem 1.25rem .2rem; align-self: flex-start; border-bottom: none; }
+}
+
+/* form pages: form + "Working with us" card side by side */
+.quote-wrap.has-aside {
+  max-width: 1060px; display: grid; grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 3rem; align-items: start;
+}
+.quote-wrap.has-aside > * { grid-column: 1; }
+.quote-wrap.has-aside > .trust-card { grid-column: 2; grid-row: 1 / span 4; position: sticky; top: 96px; }
+@media (max-width: 860px) {
+  .quote-wrap.has-aside { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .quote-wrap.has-aside > .trust-card { grid-column: 1; grid-row: auto; position: static; order: -1; }
+}
+.trust-card {
+  background: var(--light); border: 1px solid var(--border-soft); border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+}
+.contact-grid .trust-card { margin-top: 2rem; }
+.trust-title {
+  font-family: var(--mono); font-size: .74rem; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--blue); margin: 0 0 1rem;
+}
+.trust-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
+.trust-list li { position: relative; padding-left: 1.6rem; font-size: .87rem; line-height: 1.5; color: var(--gray); }
+.trust-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--blue); font-weight: 700; }
+.trust-list strong { display: block; color: var(--navy); font-size: .92rem; }
+
+/* two short fields on one line (voltage / current) */
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 520px) { .field-row { grid-template-columns: 1fr; } }
+
+/* closing banner on the home page */
+.cta-trust { list-style: none; padding: 0; margin: 1.1rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.3rem; }
+.cta-trust li { font-family: var(--mono); font-size: .76rem; letter-spacing: .03em; color: rgba(255,255,255,.82); }
+.cta-trust li::before { content: "✓ "; color: #8FB4EE; }
+
+/* thank-you page */
+.next-steps { max-width: 680px; margin: .4rem 0 2rem; padding-left: 1.3rem; display: grid; gap: .9rem; }
+.next-steps li { color: var(--gray); line-height: 1.6; padding-left: .3rem; }
+.next-steps strong { color: var(--navy); }
+
+/* collapsed menu: keep a compact "Get a quote" beside the hamburger, outside the menu */
+.header-cta { display: none; }
+@media (max-width: 1200px) {
+  .header-cta {
+    display: inline-flex; align-items: center; margin-left: auto; margin-right: .6rem;
+    padding: .5rem .9rem; border-radius: 8px; background: var(--blue); color: #fff;
+    font-size: .85rem; font-weight: 600; text-decoration: none; white-space: nowrap;
+  }
+  .header-cta:hover { background: var(--blue-dark); }
+  nav a.nav-cta { display: none; }   /* already visible in the bar */
+}
+@media (max-width: 360px) { .header-cta { padding: .45rem .7rem; font-size: .8rem; } }

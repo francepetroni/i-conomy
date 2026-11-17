@@ -1,7 +1,7 @@
 """Generate the translated copies of the site (/ru/, /ja/, /ko/, /pl/) from the English pages.
 
   python _i18n/build.py extract        -> _i18n/segments.json (every translatable English string)
-  python _i18n/build.py check ru       -> lists strings missing from _i18n/ru.json
+  python _i18n/build.py check ru       -> lists strings with no Russian entry in _i18n/src/ru.json
   python _i18n/build.py build          -> writes every language folder + hreflang/switcher on all pages
 
 The English pages are the source of truth: edit English, re-run `extract`, translate what
@@ -174,16 +174,14 @@ def auto(lang, s):
 
 
 def load(lang):
-    """src/<lang>.json maps segment index -> translation (index into segments.json).
-    Anything without an entry or a rule stays English (part numbers, values, names)."""
+    """src/<lang>.json maps English segment -> translation. Segments with no entry and no
+    rule stay English (part numbers, values, proper names). Keys are the English text, so
+    adding or reordering English content never shifts existing translations."""
     with open(os.path.join(HERE, 'segments.json'), encoding='utf-8') as f:
         segs = json.load(f)
     with open(os.path.join(HERE, 'src', lang + '.json'), encoding='utf-8') as f:
-        src = json.load(f)
-    out = {}
-    for i, en in enumerate(segs):
-        out[en] = src.get(str(i)) or auto(lang, en) or en
-    return out
+        src = {norm(k): v for k, v in json.load(f).items()}
+    return {en: src.get(norm(en)) or auto(lang, en) or en for en in segs}
 
 
 def norm(s):
@@ -191,13 +189,14 @@ def norm(s):
 
 
 def check(lang):
-    d = {norm(k): v for k, v in load(lang).items()}
+    with open(os.path.join(HERE, 'src', lang + '.json'), encoding='utf-8') as f:
+        src = {norm(k) for k in json.load(f)}
     with open(os.path.join(HERE, 'segments.json'), encoding='utf-8') as f:
         segs = json.load(f)
-    miss = [s for s in segs if norm(s) not in d]
+    miss = [s for s in segs if norm(s) not in src and not auto(lang, s)]
     for s in miss:
         print(repr(s[:120]))
-    print(lang, len(miss), 'missing of', len(segs))
+    print(lang, len(miss), 'segments kept in English (fine for part numbers / names)')
     return miss
 
 

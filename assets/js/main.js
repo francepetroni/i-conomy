@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Dropdown toggle on mobile tap + keyboard on desktop
   document.querySelectorAll('.dropdown > a').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 820) {
+      if (window.innerWidth <= 1200) {   // same breakpoint as the collapsed menu in style.css
         e.preventDefault();
         this.closest('.dropdown').classList.toggle('open');
       }
@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
         .then(function (data) {
           if (data.success) {
+            // Land on the thank-you page: it tells the visitor what happens next, and its
+            // page views are the only way the (cookieless) analytics can count enquiries.
+            var redirect = form.querySelector('input[name="redirect"]');
+            if (redirect && redirect.value) {
+              var path = new URL(redirect.value, location.href).pathname;
+              location.href = location.origin + path;
+              return;
+            }
             form.reset();
             if (status) {
               status.className = 'form-status is-ok';

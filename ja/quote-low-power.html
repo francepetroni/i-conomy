@@ -41,6 +41,7 @@
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html"><img src="../assets/img/logo/logo.webp" alt="I-Conomy" class="logo-img" width="200" height="200"><span class="logo-text"><strong>I-Conomy</strong><span>High Voltage Solutions</span></span></a>
+    <a href="quote.html" class="header-cta">見積もり依頼</a>
     <button class="nav-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     <nav>
       <a href="index.html">ホーム</a>
@@ -60,6 +61,7 @@
         </div>
       </div>
       <a href="contact.html">お問い合わせ</a>
+      <a href="quote.html" class="nav-cta">見積もり依頼</a>
       <div class="dropdown lang-menu"><a href="../ja/quote-low-power.html" class="lang-switch" aria-haspopup="true" aria-label="Language: 日本語"><svg class="lang-globe" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.7 3.9 5.9 3.9 9.5s-1.3 6.8-3.9 9.5c-2.6-2.7-3.9-5.9-3.9-9.5s1.3-6.8 3.9-9.5z"/></svg><span>日本語</span></a><div class="dropdown-menu"><a href="../quote-low-power.html" hreflang="en" lang="en">English</a><a href="../zh/quote-low-power.html" hreflang="zh-Hans" lang="zh-Hans">中文</a><a href="../ru/quote-low-power.html" hreflang="ru" lang="ru">Русский</a><a href="../ja/quote-low-power.html" hreflang="ja" lang="ja" class="is-current" aria-current="true">日本語</a><a href="../ko/quote-low-power.html" hreflang="ko" lang="ko">한국어</a><a href="../pl/quote-low-power.html" hreflang="pl" lang="pl">Polski</a></div></div>
     </nav>
   </div>
@@ -74,7 +76,17 @@
 
 <section class="bg-white">
   <div class="container">
-    <div class="quote-wrap">
+    <div class="quote-wrap has-aside">
+        <aside class="trust-card" aria-label="I-Conomy との取引">
+          <p class="trust-title">ご依頼について</p>
+          <ul class="trust-list">
+            <li><strong>2 営業日以内に返信</strong>自動返信ではなく、担当者が直接お答えします。</li>
+            <li><strong>NDA 締結可能</strong>仕様をお送りいただく前に秘密保持契約を締結します。</li>
+            <li><strong>1 台・試作品から対応</strong>最小発注数量はありません。研究室や研究グループも歓迎します。</li>
+            <li><strong>仕様策定をサポート</strong>要件が固まっていなくても大丈夫です。一緒に詰めていきます。</li>
+            <li><strong>世界各国へ発送</strong>欧州、アジアをはじめ世界中のお客様に納入しています。</li>
+          </ul>
+        </aside>
       <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
 
         <input type="hidden" name="access_key" value="729c32b2-30e8-497e-abf8-3c31e83d9ba8">
@@ -129,7 +141,7 @@
           <textarea id="message" name="Message" placeholder="以下の製品の見積もりをお願いします..."></textarea>
         </div>
 
-        <button type="submit">送信</button>
+        <button type="submit">送信する</button>
         <div class="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
