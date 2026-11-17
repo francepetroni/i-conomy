@@ -1,0 +1,3 @@
+# The README is for visitors of the GitHub repository, not a page of the website.
+exclude:
+  - README.md
