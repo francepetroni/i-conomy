@@ -10,15 +10,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo/favicon-16.png">
   <link rel="apple-touch-icon" href="../assets/img/logo/apple-touch-icon.png">
   <meta name="theme-color" content="#0A1B33">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/manrope-latin.woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/style.css">
   <!-- SEO -->
   <meta name="keywords" content="高压电源, 航天电源, 无ITAR限制, 高压DC/DC变换器, 宇航级电源, 光电倍增管电源, 硅光电倍增器偏置电源, APD偏置电源, 压电驱动器电源, 四象限放大器, 抗辐照, 总剂量, 定制高压系统, 高压模块, I-Conomy">
   <link rel="canonical" href="https://i-conomy.com/zh/heritage.html">
   <link rel="alternate" hreflang="en" href="https://i-conomy.com/heritage.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://i-conomy.com/zh/heritage.html">
+  <link rel="alternate" hreflang="ru" href="https://i-conomy.com/ru/heritage.html">
+  <link rel="alternate" hreflang="ja" href="https://i-conomy.com/ja/heritage.html">
+  <link rel="alternate" hreflang="ko" href="https://i-conomy.com/ko/heritage.html">
+  <link rel="alternate" hreflang="pl" href="https://i-conomy.com/pl/heritage.html">
   <link rel="alternate" hreflang="x-default" href="https://i-conomy.com/heritage.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="I-Conomy">
@@ -83,7 +85,7 @@
         </div>
       </div>
       <a href="contact.html">联系我们</a>
-      <a href="../heritage.html" class="lang-switch" hreflang="en" aria-label="Switch to English"><span class="flag is-off">🇨🇳</span><span class="flag">🇬🇧</span></a>
+      <div class="dropdown lang-menu"><a href="../zh/heritage.html" class="lang-switch" aria-haspopup="true" aria-label="Language: 中文"><svg class="lang-globe" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.7 3.9 5.9 3.9 9.5s-1.3 6.8-3.9 9.5c-2.6-2.7-3.9-5.9-3.9-9.5s1.3-6.8 3.9-9.5z"/></svg><span>中文</span></a><div class="dropdown-menu"><a href="../heritage.html" hreflang="en" lang="en">English</a><a href="../zh/heritage.html" hreflang="zh-Hans" lang="zh-Hans" class="is-current" aria-current="true">中文</a><a href="../ru/heritage.html" hreflang="ru" lang="ru">Русский</a><a href="../ja/heritage.html" hreflang="ja" lang="ja">日本語</a><a href="../ko/heritage.html" hreflang="ko" lang="ko">한국어</a><a href="../pl/heritage.html" hreflang="pl" lang="pl">Polski</a></div></div>
     </nav>
   </div>
 </header>
@@ -168,17 +170,13 @@
       </div>
 
       <div class="video-wrap" style="margin-top:1.2rem;">
-        <iframe
-          src="https://www.youtube.com/embed/NscPB6RfjB0"
-          title="张衡一号发射实况 —— 酒泉卫星发射中心，2018 年 2 月 2 日"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-          style="border:none;width:100%;aspect-ratio:16/9;border-radius:12px;display:block;">
-        </iframe>
+        <a class="video-facade" href="https://www.youtube.com/watch?v=NscPB6RfjB0" data-yt="NscPB6RfjB0" data-title="张衡一号发射实况 —— 酒泉卫星发射中心，2018 年 2 月 2 日" target="_blank" rel="noopener" aria-label="播放视频：张衡一号发射实况">
+          <img src="../assets/img/heritage/cses-01-launch-video.webp" alt="" width="640" height="360" loading="lazy">
+          <span class="video-play" aria-hidden="true"></span>
+        </a>
         <p style="font-size:.78rem;color:var(--gray);margin-top:.5rem;">
           张衡一号卫星发射实况，中国酒泉卫星发射中心（该星自 2018 年 2 月 2 日起在轨运行）
-          &mdash; 素材来源：中国中央电视台
+          &mdash; 素材来源：中国中央电视台（视频托管于 YouTube，中国大陆可能无法播放）
         </p>
       </div>
     </div>
@@ -236,5 +234,6 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eaf00c4dd2424c0dafde19ed732faa51"}'></script>
 </body>
 </html>

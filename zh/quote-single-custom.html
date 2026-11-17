@@ -9,15 +9,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo/favicon-16.png">
   <link rel="apple-touch-icon" href="../assets/img/logo/apple-touch-icon.png">
   <meta name="theme-color" content="#0A1B33">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/manrope-latin.woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- SEO -->
   <link rel="canonical" href="https://i-conomy.com/zh/quote-single-custom.html">
   <link rel="alternate" hreflang="en" href="https://i-conomy.com/quote-single-custom.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://i-conomy.com/zh/quote-single-custom.html">
+  <link rel="alternate" hreflang="ru" href="https://i-conomy.com/ru/quote-single-custom.html">
+  <link rel="alternate" hreflang="ja" href="https://i-conomy.com/ja/quote-single-custom.html">
+  <link rel="alternate" hreflang="ko" href="https://i-conomy.com/ko/quote-single-custom.html">
+  <link rel="alternate" hreflang="pl" href="https://i-conomy.com/pl/quote-single-custom.html">
   <link rel="alternate" hreflang="x-default" href="https://i-conomy.com/quote-single-custom.html">
   <meta name="robots" content="noindex">
   <!-- /SEO -->
@@ -46,7 +48,7 @@
         </div>
       </div>
       <a href="contact.html">联系我们</a>
-      <a href="../quote-single-custom.html" class="lang-switch" hreflang="en" aria-label="Switch to English"><span class="flag is-off">🇨🇳</span><span class="flag">🇬🇧</span></a>
+      <div class="dropdown lang-menu"><a href="../zh/quote-single-custom.html" class="lang-switch" aria-haspopup="true" aria-label="Language: 中文"><svg class="lang-globe" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.7 3.9 5.9 3.9 9.5s-1.3 6.8-3.9 9.5c-2.6-2.7-3.9-5.9-3.9-9.5s1.3-6.8 3.9-9.5z"/></svg><span>中文</span></a><div class="dropdown-menu"><a href="../quote-single-custom.html" hreflang="en" lang="en">English</a><a href="../zh/quote-single-custom.html" hreflang="zh-Hans" lang="zh-Hans" class="is-current" aria-current="true">中文</a><a href="../ru/quote-single-custom.html" hreflang="ru" lang="ru">Русский</a><a href="../ja/quote-single-custom.html" hreflang="ja" lang="ja">日本語</a><a href="../ko/quote-single-custom.html" hreflang="ko" lang="ko">한국어</a><a href="../pl/quote-single-custom.html" hreflang="pl" lang="pl">Polski</a></div></div>
     </nav>
   </div>
 </header>
@@ -72,7 +74,7 @@
 
         <div class="field">
           <label for="org">单位名称 <span class="req">*</span></label>
-          <input type="text" id="org" name="单位名称" required>
+          <input type="text" id="org" name="Organization Name" required>
         </div>
 
         <div class="field">
@@ -82,37 +84,37 @@
 
         <div class="field">
           <label for="phone">联系电话</label>
-          <input type="tel" id="phone" name="联系电话" placeholder="例如 +86 13000000000">
+          <input type="tel" id="phone" name="Phone Number" placeholder="例如 +86 13000000000">
         </div>
 
         <div class="field">
           <label for="model">型号名称</label>
-          <input type="text" id="model" name="型号名称" value="Single Channel Custom Solution">
+          <input type="text" id="model" name="Model's Name" value="Single Channel Custom Solution">
         </div>
 
         <div class="field">
           <label for="quantity">数量 <span class="req">*</span></label>
-          <input type="number" id="quantity" name="数量" min="1" value="1" required>
+          <input type="number" id="quantity" name="Quantity" min="1" value="1" required>
         </div>
 
         <div class="three-col">
           <div class="field">
             <label for="voltage">所需电压 <span class="req">*</span></label>
-            <input type="text" id="voltage" name="所需电压" placeholder="例如 3800 V" required>
+            <input type="text" id="voltage" name="Required Voltage" placeholder="例如 3800 V" required>
           </div>
           <div class="field">
             <label for="current">所需电流 <span class="req">*</span></label>
-            <input type="text" id="current" name="所需电流" placeholder="例如 1.2 mA" required>
+            <input type="text" id="current" name="Required Current" placeholder="例如 1.2 mA" required>
           </div>
           <div class="field">
             <label for="noise">输出噪声 <span class="req">*</span></label>
-            <input type="text" id="noise" name="输出噪声" placeholder="例如 典型 15 mVpp" required>
+            <input type="text" id="noise" name="Output Noise" placeholder="例如 典型 15 mVpp" required>
           </div>
         </div>
 
         <div class="field">
           <label for="message">其他需求</label>
-          <textarea id="message" name="其他需求" placeholder="请补充说明您的需求……"></textarea>
+          <textarea id="message" name="Additional Requests" placeholder="请补充说明您的需求……"></textarea>
         </div>
 
         <button type="submit">提交</button>
@@ -159,5 +161,6 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eaf00c4dd2424c0dafde19ed732faa51"}'></script>
 </body>
 </html>

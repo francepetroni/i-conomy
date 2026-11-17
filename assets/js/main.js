@@ -36,6 +36,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Web3Forms: submit over fetch so the visitor stays on the page.
   // Without JS the form still POSTs normally and lands on thanks.html.
+  // Field names must stay ASCII: Web3Forms decodes multipart field *names* as
+  // Latin-1, so a Chinese name="姓名" reaches the inbox as "Å§å". Values are fine.
+  var MSG = {
+    en: ['Sending…', 'Thank you — your message has been sent. We will get back to you shortly.',
+         'Sorry, the message could not be sent. Please email us directly at '],
+    zh: ['正在发送…', '谢谢！您的信息已发送，我们会尽快回复您。', '抱歉，信息未能发送。请直接发送邮件至 '],
+    ru: ['Отправка…', 'Спасибо! Ваше сообщение отправлено. Мы скоро свяжемся с вами.',
+         'К сожалению, сообщение не удалось отправить. Напишите нам напрямую: '],
+    ja: ['送信中…', 'ありがとうございます。メッセージは送信されました。追ってご連絡いたします。',
+         '申し訳ありません。送信できませんでした。こちらまで直接メールをお送りください：'],
+    ko: ['보내는 중…', '감사합니다. 메시지가 전송되었습니다. 곧 연락드리겠습니다.',
+         '죄송합니다. 메시지를 보내지 못했습니다. 다음 주소로 직접 이메일을 보내 주십시오: '],
+    pl: ['Wysyłanie…', 'Dziękujemy — wiadomość została wysłana. Wkrótce się odezwiemy.',
+         'Niestety nie udało się wysłać wiadomości. Napisz do nas bezpośrednio: ']
+  };
+  var m = MSG[(document.documentElement.lang || 'en').slice(0, 2).toLowerCase()] || MSG.en;
+  var T = { sending: m[0], ok: m[1], err: m[2] };
   document.querySelectorAll('form[action*="api.web3forms.com"]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -43,17 +60,24 @@ document.addEventListener('DOMContentLoaded', function () {
       var button = form.querySelector('button[type="submit"]');
       var label  = button ? button.textContent : '';
 
-      if (status) { status.className = 'form-status is-pending'; status.textContent = 'Sending…'; }
-      if (button) { button.disabled = true; button.textContent = 'Sending…'; }
+      if (status) { status.className = 'form-status is-pending'; status.textContent = T.sending; }
+      if (button) { button.disabled = true; button.textContent = T.sending; }
 
-      fetch(form.action, { method: 'POST', body: new FormData(form) })
+      var data = new FormData(form);
+      // Put the requested model in the e-mail subject so enquiries can be sorted
+      // from the inbox list: "Technical Manual request (ZH) – HV3 + 1500V".
+      var model = (data.get("Model's Name") || '').toString().trim();
+      var subject = (data.get('subject') || '').toString();
+      if (model && subject) data.set('subject', subject + ' – ' + model.slice(0, 80));
+
+      fetch(form.action, { method: 'POST', body: data })
         .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
         .then(function (data) {
           if (data.success) {
             form.reset();
             if (status) {
               status.className = 'form-status is-ok';
-              status.textContent = 'Thank you — your message has been sent. We will get back to you shortly.';
+              status.textContent = T.ok;
             }
           } else {
             throw new Error(data.message || 'submit failed');
@@ -62,13 +86,28 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(function () {
           if (status) {
             status.className = 'form-status is-error';
-            status.innerHTML = 'Sorry, the message could not be sent. Please email us directly at ' +
+            status.innerHTML = T.err +
                                '<a href="mailto:info@i-conomy.com">info@i-conomy.com</a>.';
           }
         })
         .finally(function () {
           if (button) { button.disabled = false; button.textContent = label; }
         });
+    });
+  });
+
+  // YouTube facade -> real player on click (link to youtube.com still works without JS)
+  document.querySelectorAll('.video-facade[data-yt]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.className = 'video-frame';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1';
+      f.title = a.dataset.title || '';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      a.replaceWith(f);
+      f.focus();
     });
   });
 

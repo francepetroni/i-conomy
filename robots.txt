@@ -4,5 +4,9 @@ Allow: /
 # conversion + confirmation pages: reachable, but not worth indexing
 Disallow: /thanks.html
 Disallow: /zh/thanks.html
+Disallow: /ru/thanks.html
+Disallow: /ja/thanks.html
+Disallow: /ko/thanks.html
+Disallow: /pl/thanks.html
 
 Sitemap: https://i-conomy.com/sitemap.xml

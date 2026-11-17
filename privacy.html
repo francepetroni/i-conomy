@@ -9,9 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
   <meta name="theme-color" content="#0A1B33">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin.woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- SEO -->
@@ -106,7 +104,7 @@
       <hr class="section-divider">
 
       <h3>The purposes of processing</h3>
-      <p>The Data concerning the User is collected to allow the Owner to provide its Service, comply with its legal obligations, respond to enforcement requests, protect its rights and interests (or those of its Users or third parties), detect any malicious or fraudulent activity, as well as the following: Contacting the User and Displaying content from external platforms.</p>
+      <p>The Data concerning the User is collected to allow the Owner to provide its Service, comply with its legal obligations, respond to enforcement requests, protect its rights and interests (or those of its Users or third parties), detect any malicious or fraudulent activity, as well as the following: Contacting the User, Displaying content from external platforms and Statistics.</p>
 
       <hr class="section-divider">
 
@@ -120,13 +118,14 @@
       <h4>Displaying content from external platforms</h4>
       <p>This type of service allows you to view content hosted on external platforms directly from the pages of this Application and interact with them. Such services are often referred to as widgets. This type of service might still collect web traffic data for the pages where the service is installed, even when Users do not use it.</p>
 
-      <p><strong style="color:var(--navy);">Google Fonts (Google LLC)</strong><br>
-      Google Fonts is a typeface visualization service provided by Google LLC that allows this Application to incorporate content of this kind on its pages.<br>
+      <p><strong style="color:var(--navy);">YouTube video widget (Google LLC)</strong><br>
+      The Heritage page shows a preview image of a YouTube video. The YouTube player is loaded, from the privacy-enhanced domain youtube-nocookie.com, only when the User clicks the preview; until then no data is sent to YouTube.<br>
       <em>Personal Data processed: Trackers; Usage Data. Place of processing: United States.</em></p>
 
-      <p><strong style="color:var(--navy);">Font Awesome (Fonticons, Inc.)</strong><br>
-      Font Awesome is a typeface visualization service provided by Fonticons, Inc. that allows this Application to incorporate content of this kind on its pages.<br>
-      <em>Personal Data processed: Trackers; Usage Data. Place of processing: United States.</em></p>
+      <h4>Statistics</h4>
+      <p><strong style="color:var(--navy);">Cloudflare Web Analytics (Cloudflare, Inc.)</strong><br>
+      This Application uses Cloudflare Web Analytics to count page views in aggregate (pages visited, referring site, country, browser and page load performance). It sets no cookies, does not use local storage and does not fingerprint or track Users across sites; individual Users cannot be identified.<br>
+      <em>Personal Data processed: Usage Data (aggregated, anonymous). Place of processing: United States and Cloudflare's global network.</em></p>
 
       <hr class="section-divider">
 
@@ -259,5 +258,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eaf00c4dd2424c0dafde19ed732faa51"}'></script>
 </body>
 </html>
